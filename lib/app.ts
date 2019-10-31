@@ -20,5 +20,4 @@ class App {
         this.app.use(bodyParser.urlencoded({extended: false}));
     }
 }
-
 export default new App().app;

@@ -1,20 +1,23 @@
 // lib/app.ts
 
 import * as express from 'express';
-import * as bodyParse from 'body-parser';
+import * as bodyParser from 'body-parser';
+import { Routes } from './routes/Routes';
 
 class App {
 
     public app: express.Application;
+    public routelib: Routes = new Routes();
 
     constructor(){
         this.app = express();
         this.config();
+        this.routelib.routes(this.app);
     }
 
     private config(): void{
-        this.app.use(bodyParse.json());
-        this.app.use(bodyParse.urlencoded({extended: false}));
+        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.urlencoded({extended: false}));
     }
 }
 

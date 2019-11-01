@@ -1,6 +1,6 @@
 # Node-Apis-Typescript
 
-## Learn programming to building RESTful Web APIs with Node.js, Express, MongoDB and TypeScript
+## Learn programming how to build RESTful Web APIs with Node.js, Express, MongoDB and TypeScript
 ![Node-api-typescript](img/01.jpeg)
 
 ## Getting Started

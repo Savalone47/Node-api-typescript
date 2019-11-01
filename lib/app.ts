@@ -11,7 +11,7 @@ class App {
 
     public app: express.Application;
     public routelib: Routes = new Routes();
-    public mongoUrl: String = 'mongodb://localhost/crudb';
+    public mongoUrl: String = 'mongodb://localhost:27017/Contact';
 
     constructor(){
         this.app = express();
@@ -24,9 +24,9 @@ class App {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: false}));
     }
-    private mongoSetup(): void{
+    private mongoSetup(): void{   
         mongoose.Promise = global.Promise;
-        mongoose.connect(this.mongoUrl);
+        mongoose.connect(this.mongoUrl,  { useNewUrlParser: true } );
     }
 }
 export default new App().app;

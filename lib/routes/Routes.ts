@@ -10,8 +10,12 @@ export class Routes {
     
     public routes(app): void{
         // get specific contact           
-        app.route('/')
-        .get(this.contactController.getContacts);
+       app.route('/')
+        .get((req: Request, res: Response)=>{
+            res.status(200).send({
+                message: 'get contact request successfuly'
+            });
+        });
         
         app.route('/contact')
         .get(this.contactController.getContacts)

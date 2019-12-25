@@ -7,12 +7,6 @@
 
 Node and typescript is for web programming languages by practicing step by step with tests and levels. Good for beginners and to test their capabilities in web programming.
 
-make sure that you have download the installer
-## Built With
-
-* [NodeJs](https://nodejs.org/en/docs/) - JavaScript runtime built on Chrome's V8 JavaScript engine. 
-* [Materialize](http://materializecss.com/getting-started.html) - A modern responsive front-end framework based on Material Design
-
 ## Features
 
 * Typescript
@@ -27,7 +21,6 @@ make sure that you have download the installer
 * `npm install`
 * `npm run dev` 
 * optional: include *.env* in your *.gitignore*
-
 
 
 ![Node-api-typescript](img/02.jpeg)

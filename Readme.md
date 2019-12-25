@@ -19,13 +19,14 @@ make sure that you have download the installer
    and download the appropriate version for your operating system then :
 
 ```
+npm init -y
+
+tsc --init -y
+
 npm install -g typescript ts-node
 
 npm install --save @types/express express body-parser mongoose nodemon
 
-npm init -y
-
-tsc --init -y
 ```
 
 ```
@@ -33,7 +34,7 @@ npm run dev
 
 npm run prod
 
-ts-node .\lib\server.ts  // For testing the server, we will run
+ts-node ./lib/server.ts    //Server is running
 ```
 
 ![Node-api-typescript](img/02.jpeg)

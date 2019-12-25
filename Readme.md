@@ -25,10 +25,7 @@ make sure that you have download the installer
 * `git clone https://github.com/savalone47/Node-api-typescritp.git`
 * `cd Node-api-typescritp`
 * `npm install`
-
 * `npm run dev` 
-* `npm run prod`
-* `ts-node`
 * optional: include *.env* in your *.gitignore*
 
 

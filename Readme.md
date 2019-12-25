@@ -15,7 +15,7 @@ make sure that you have download the installer
 
 ### Installing and Run
 
-   [Click here to download the installer](https://github.com/savalone47/Node-api-typescritp/)
+   [Click here to download the installer](https://github.com/savalone47/Node-api-typescritp.git/)
    and download the appropriate version for your operating system then :
 
 ```

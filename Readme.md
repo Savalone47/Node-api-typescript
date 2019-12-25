@@ -13,67 +13,80 @@ make sure that you have download the installer
 * [NodeJs](https://nodejs.org/en/docs/) - JavaScript runtime built on Chrome's V8 JavaScript engine. 
 * [Materialize](http://materializecss.com/getting-started.html) - A modern responsive front-end framework based on Material Design
 
+## Features
+
+* Typescript
+* Express
+* REST API
+* MongoDB
+
 ### Installing and Run
 
-   [Click here to download the installer](https://github.com/savalone47/Node-api-typescritp.git/)
-   and download the appropriate version for your operating system then :
+* `git clone https://github.com/savalone47/Node-api-typescritp.git`
+* `cd Node-api-typescritp`
+* `npm install`
 
-```
-npm init -y
+* `npm run dev` 
+* `npm run prod`
+* `ts-node`
+* optional: include *.env* in your *.gitignore*
 
-tsc --init -y
 
-npm install -g typescript ts-node
-
-npm install --save @types/express express body-parser mongoose nodemon
-
-```
-
-```
-npm run dev 
-
-npm run prod
-
-ts-node ./lib/server.ts    //Server is running
-```
 
 ![Node-api-typescript](img/02.jpeg)
 
-`````
-// lib/app.ts
+```
+//lib/app.ts
 
-import * as express from 'express';
+import * as express from "express";
+import * as bodyParser from "body-parser";
+import { ContactSchema } from "./models/crmModel";
+import { ContactController } from "./controllers/crmController";
+import { Routes } from "./routes/crmRoutes";
+import * as mongoose from "mongoose";
 
-import * as mongoose from 'mongoose';
-
-import * as bodyParser from 'body-parser';
-
-import { Routes } from './routes/Routes';
 class App {
 
-    public app: express.Application;
-    public routelib: Routes = new Routes();
-    public mongoUrl: String = 'mongodb://localhost:27017/Contact';
-
-    constructor(){
-        this.app = express();
-        this.config();
-        this.routelib.routes(this.app);
-        this.mongoSetup();
-    }
-
-    private config(): void{
-        this.app.use(bodyParser.json());
-        this.app.use(bodyParser.urlencoded({extended: false}));
-    }
-    private mongoSetup(): void{   
-        mongoose.Promise = global.Promise;
-        mongoose.connect(this.mongoUrl,  { useNewUrlParser: true } );
-    }
+	public app:express.Application;
+	public routePrv: Routes = new Routes();
+	public mongoUrl: string = 'mongodb://localhost:27017/CRMdb';
+	
+	constructor(){
+		this.app = express();
+		this.config();
+		this.routePrv.routes(this.app);
+		this.mongoSetup();
+	}
+	private config():void {
+		this.app.use(bodyParser.json());
+		this.app.use(bodyParser.urlencoded(
+			{extended: false}
+		));
+	}
+	private mongoSetup():void {
+		mongoose.Promise = global.Promise;
+		mongoose.connect(this.mongoUrl);
+	}
 }
 export default new App().app;
-`````
+```
 
+![Node-api-typescript](img/postman.png)
+
+#### Postman
+
+* Install [Postman](https://www.getpostman.com/apps) to interact with REST API
+* Create a message with:
+  * URL: http://localhost:3000/contact
+  * Method: POST
+  * Body: x-www-form-urlencoded
+  * Body Content: `{ key - value: 'firstName': 'Robert', 'lastName': 'Carlos', 'email': 'Robert@gmail.com', 'phone': '1010101', 'company': 'BinTech' }`
+* Delete a message with:
+  * URL: http://localhost:3000/contact/5e03c97dbaeefa4f7f830eee
+  * Method: DELETE
+  
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+

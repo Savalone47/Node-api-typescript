@@ -1,4 +1,4 @@
-# Node-Apis-Typescript
+# node-Apis-Typescript
 
 ## Learn programming how to build RESTful Web APIs with Node.js, Express, MongoDB and TypeScript
 ![Node-api-typescript](img/01.jpeg)
@@ -16,8 +16,8 @@ Node and typescript is for web programming languages by practicing step by step 
 
 ### Installing and Run
 
-* `git clone https://github.com/savalone47/Node-api-typescritp.git`
-* `cd Node-api-typescritp`
+* `git clone https://github.com/savalone47/node-api-typescritp.git`
+* `cd node-api-typescritp`
 * `npm install`
 * `npm run dev` 
 * optional: include *.env* in your *.gitignore*
@@ -25,7 +25,7 @@ Node and typescript is for web programming languages by practicing step by step 
 
 ![Node-api-typescript](img/02.jpeg)
 
-```
+```javascript
 //lib/app.ts
 
 import * as express from "express";
@@ -72,7 +72,7 @@ export default new App().app;
   * Body: x-www-form-urlencoded
   * Body Content: `{ key - value: 'firstName': 'Robert', 'lastName': 'Carlos', 'email': 'Robert@gmail.com', 'phone': '1010101', 'company': 'BinTech' }`
 * Delete a message with:
-  * URL: http://localhost:3000/contact/5e03c97dbaeefa4f7f830eee
+  * URL: http://localhost:3000/contact/:id
   * Method: DELETE
   
 ## License

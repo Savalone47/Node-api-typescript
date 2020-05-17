@@ -8,7 +8,7 @@ import { Routes } from "./routes/crmRoutes";
 
 class App {
 
-	public app:express.Application;
+	public app:      express.Application;
 	public routePrv: Routes = new Routes();
 	public mongoUrl: string = 'mongodb://localhost:27017/CRMdb';
 	

@@ -1,10 +1,10 @@
-import * as express from "express";
 import * as bodyParser from "body-parser";
-import { ContactSchema } from "./models/crmModel";
-import { ContactController } from "./controllers/crmController";
-import { Routes } from "./routes/crmRoutes";
+
+import * as express from "express";
+
 import * as mongoose from "mongoose";
 
+import { Routes } from "./routes/crmRoutes";
 
 class App {
 

@@ -1,9 +1,6 @@
 import * as mongoose from "mongoose";
-import app from "../app";
 
 const Schema = mongoose.Schema;
-
-
 export const ContactSchema = new Schema({
 
 	firstName: {

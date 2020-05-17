@@ -1,7 +1,6 @@
-import { Request, Response} from "express";
+import { Request, Response } from "express";
+
 import { ContactController } from "../controllers/crmController";
-import { ContactSchema } from "../models/crmModel";
-import app from "../app";
 
 export class Routes {
 	public contactController: ContactController = new ContactController();

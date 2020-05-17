@@ -1,4 +1,4 @@
-# Node-Apis-Typescript
+# node-Apis-Typescript
 
 ## Learn programming how to build RESTful Web APIs with Node.js, Express, MongoDB and TypeScript
 ![Node-api-typescript](img/01.jpeg)
@@ -15,39 +15,32 @@ make sure that you have download the installer
 
 ## Features
 
-* Typescript
-* Express
-* REST API
+* typescript
+* nodejs
+* RESTFull APi's
 * MongoDB
 
 ### Installing and Run
 
-* `git clone https://github.com/savalone47/Node-api-typescritp.git`
-* `cd Node-api-typescritp`
-* `npm install`
-
-* `npm run dev` 
-* `npm run prod`
-* `ts-node`
-* optional: include *.env* in your *.gitignore*
-
+* `git clone https://github.com/savalone47/node-api-typescritp.git`
+* `cd node-api-typescritp`
+* `$ npm install`
+* `$ npm run build && npm run start`
 
 
 ![Node-api-typescript](img/02.jpeg)
 
-```
-//lib/app.ts
+```javascript
 
-import * as express from "express";
+//lib/app.ts
 import * as bodyParser from "body-parser";
-import { ContactSchema } from "./models/crmModel";
-import { ContactController } from "./controllers/crmController";
-import { Routes } from "./routes/crmRoutes";
+import * as express from "express";
 import * as mongoose from "mongoose";
+import { Routes } from "./routes/crmRoutes";
 
 class App {
 
-	public app:express.Application;
+	public app:      express.Application;
 	public routePrv: Routes = new Routes();
 	public mongoUrl: string = 'mongodb://localhost:27017/CRMdb';
 	
@@ -65,10 +58,11 @@ class App {
 	}
 	private mongoSetup():void {
 		mongoose.Promise = global.Promise;
-		mongoose.connect(this.mongoUrl);
+		mongoose.connect(this.mongoUrl,{ useUnifiedTopology: true });
 	}
 }
 export default new App().app;
+
 ```
 
 ![Node-api-typescript](img/postman.png)
@@ -76,17 +70,17 @@ export default new App().app;
 #### Postman
 
 * Install [Postman](https://www.getpostman.com/apps) to interact with REST API
+
+
 * Create a message with:
   * URL: http://localhost:3000/contact
   * Method: POST
   * Body: x-www-form-urlencoded
   * Body Content: `{ key - value: 'firstName': 'Robert', 'lastName': 'Carlos', 'email': 'Robert@gmail.com', 'phone': '1010101', 'company': 'BinTech' }`
+
+
 * Delete a message with:
-  * URL: http://localhost:3000/contact/5e03c97dbaeefa4f7f830eee
+  * URL: http://localhost:3000/contact/id
   * Method: DELETE
   
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 

@@ -7,12 +7,6 @@
 
 Node and typescript is for web programming languages by practicing step by step with tests and levels. Good for beginners and to test their capabilities in web programming.
 
-make sure that you have download the installer
-## Built With
-
-* [NodeJs](https://nodejs.org/en/docs/) - JavaScript runtime built on Chrome's V8 JavaScript engine. 
-* [Materialize](http://materializecss.com/getting-started.html) - A modern responsive front-end framework based on Material Design
-
 ## Features
 
 * typescript
@@ -24,8 +18,10 @@ make sure that you have download the installer
 
 * `git clone https://github.com/savalone47/node-api-typescritp.git`
 * `cd node-api-typescritp`
+
 * `$ npm install`
 * `$ npm run build && npm run start`
+* optional: include *.env* in your *.gitignore*
 
 
 ![Node-api-typescript](img/02.jpeg)
@@ -73,14 +69,11 @@ export default new App().app;
 
 
 * Create a message with:
+
   * URL: http://localhost:3000/contact
   * Method: POST
   * Body: x-www-form-urlencoded
   * Body Content: `{ key - value: 'firstName': 'Robert', 'lastName': 'Carlos', 'email': 'Robert@gmail.com', 'phone': '1010101', 'company': 'BinTech' }`
 
-
 * Delete a message with:
   * URL: http://localhost:3000/contact/id
-  * Method: DELETE
-  
-

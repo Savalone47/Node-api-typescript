@@ -1,6 +1,4 @@
-# node-Apis-Typescript
-
-## Learn programming how to build RESTful Web APIs with Node.js, Express, MongoDB and TypeScript
+# Learn programming how to build RESTful Web APIs with Node.js, Express, MongoDB and TypeScript
 ![Node-api-typescript](img/01.jpeg)
 
 ## Getting Started
@@ -24,11 +22,9 @@ Node and typescript is for web programming languages by practicing step by step 
 * optional: include *.env* in your *.gitignore*
 
 
-![Node-api-typescript](img/02.jpeg)
+![node-api-typescript](img/02.jpeg)
 
 ```javascript
-
-//lib/app.ts
 import * as bodyParser from "body-parser";
 import * as express from "express";
 import * as mongoose from "mongoose";
@@ -36,7 +32,7 @@ import { Routes } from "./routes/crmRoutes";
 
 class App {
 
-	public app:      express.Application;
+	public app     : express.Application;
 	public routePrv: Routes = new Routes();
 	public mongoUrl: string = 'mongodb://localhost:27017/CRMdb';
 	
@@ -54,26 +50,28 @@ class App {
 	}
 	private mongoSetup():void {
 		mongoose.Promise = global.Promise;
-		mongoose.connect(this.mongoUrl,{ useUnifiedTopology: true });
+		mongoose.connect(
+			this.mongoUrl,
+			{ useUnifiedTopology: true }
+		);
 	}
 }
 export default new App().app;
-
 ```
 
-![Node-api-typescript](img/postman.png)
+![node-api-typescript](img/postman.png)
 
 #### Postman
 
 * Install [Postman](https://www.getpostman.com/apps) to interact with REST API
 
 
-* Create a message with:
+#### Author
 
-  * URL: http://localhost:3000/contact
-  * Method: POST
-  * Body: x-www-form-urlencoded
-  * Body Content: `{ key - value: 'firstName': 'Robert', 'lastName': 'Carlos', 'email': 'Robert@gmail.com', 'phone': '1010101', 'company': 'BinTech' }`
 
-* Delete a message with:
-  * URL: http://localhost:3000/contact/id
+* **Savalone47** - *Initial work* - [node-api-typescript](https://github.com/savalone47/node-api-typescript)
+
+
+#### License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

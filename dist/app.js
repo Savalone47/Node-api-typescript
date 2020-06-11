@@ -15,11 +15,11 @@ class App {
     }
     config() {
         this.app.use(bodyParser.json());
-        this.app.use(bodyParser.urlencoded({ extended: false }));
+        this.app.use(bodyParser.urlencoded({ extended: true }));
     }
     mongoSetup() {
         mongoose.Promise = global.Promise;
-        mongoose.connect(this.mongoUrl, { useUnifiedTopology: true });
+        mongoose.connect(this.mongoUrl, { useNewUrlParser: true });
     }
 }
 exports.default = new App().app;

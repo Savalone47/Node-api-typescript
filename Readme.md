@@ -61,13 +61,8 @@ export default new App().app;
 
 ![node-api-typescript](img/postman.png)
 
-#### Postman
-
-* Install [Postman](https://www.getpostman.com/apps) to interact with REST API
-
 
 #### Author
-
 
 * **Savalone47** - *Initial work* - [node-api-typescript](https://github.com/savalone47/node-api-typescript)
 

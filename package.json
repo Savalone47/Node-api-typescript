@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "RESTful Web APIs with Node.js & TypeScript",
   "main": "server.js",
-  "private": true,
   
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

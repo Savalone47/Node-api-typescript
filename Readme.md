@@ -14,12 +14,19 @@ Node and typescript is for web programming languages by practicing step by step 
 
 ### Installing and Run
 
-* `git clone https://github.com/savalone47/node-api-typescritp.git`
-* `cd node-api-typescritp`
+* `git clone https://github.com/savalone47/node-api-typescript.git`
+* `cd node-api-typescript`
 
 * `$ npm install`
 * `$ npm run build && npm run start`
 * optional: include *.env* in your *.gitignore*
+
+Code is Running on 
++ http://localhost:3000
++ http://localhost:3000/contact
++ http://localhost:3000/contact/:contactId
+
+Thanks !
 
 
 ![node-api-typescript](img/02.jpeg)
@@ -34,7 +41,7 @@ class App {
 
 	public app     : express.Application;
 	public routePrv: Routes = new Routes();
-	public mongoUrl: string = 'mongodb://localhost:27017/CRMdb';
+	public mongoUrl: string = 'mongodb://localhost:27017/CRM';
 	
 	constructor(){
 		this.app = express();
@@ -65,8 +72,10 @@ export default new App().app;
 #### Author
 
 * **Savalone47** - *Initial work* - [node-api-typescript](https://github.com/savalone47/node-api-typescript)
+Thanks !
 
 
 #### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Thanks !

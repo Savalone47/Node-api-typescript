@@ -4,11 +4,10 @@ import { ContactSchema } from "../models/crmModel";
 
 
 const Contact = mongoose.model('Contact', ContactSchema);
+
 export class ContactController{
 
-	/**
-		Add new Contact
-	**/
+		// Add new Contact	
 	public addNewContact (req: Request, res: Response) {
 		let newContact = new Contact(req.body);
 		newContact.save((err, contact) => {
@@ -17,9 +16,8 @@ export class ContactController{
 			}res.json(contact);
 		});
 	}
-	/**
-		GET Contact
-	**/
+	
+		// GET Contact
 	public getContacts (req: Request, res: Response) {
 		Contact.find({}, (err, contact) => {
 			if(err){
@@ -27,9 +25,8 @@ export class ContactController{
 			}res.json(contact);
 		});
 	}
-	/**
-		GET BY ID Contact
-	**/
+	
+		// GET BY ID Contact
 	public getContactWithID (req: Request, res: Response) {
 		Contact.findById(req.params.contactId, (err, contact) => {
 			if(err){
@@ -37,9 +34,8 @@ export class ContactController{
 			}res.json(contact);
 		});
 	}
-	/**
-		Modify BY ID  Contact
-	**/
+
+		// Modify BY ID  Contact
 	public updateContact (req: Request, res: Response) {
 		Contact.findOneAndUpdate({ _id: req.params.contactId }, req.body, { new: true },(err, contact) => {
 			if(err){
@@ -47,9 +43,8 @@ export class ContactController{
 			}res.json(contact);
 		});
 	}
-	/**
-		Delete BY ID Contact
-	**/
+
+		// Delete BY ID Contact
 	public deleteContact (req: Request, res: Response) {
 		Contact.remove({ _id: req.params.contactId }, (err, contact) => {
 			if(err){

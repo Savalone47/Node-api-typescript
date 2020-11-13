@@ -7,7 +7,7 @@ const crmRoutes_1 = require("./routes/crmRoutes");
 class App {
     constructor() {
         this.routePrv = new crmRoutes_1.Routes();
-        this.mongoUrl = 'mongodb://localhost:27017/CRMdb';
+        this.mongoUrl = 'mongodb://localhost:27017/CRM';
         this.app = express();
         this.config();
         this.routePrv.routes(this.app);
